@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <p>{{memo}}</p>
+    <p>{{ memo }}</p>
     <ul>
       <li v-for="memo in memos" :key="memo.id">
-       {{ memo.title }} : {{ memo.description }}
+        {{ memo.title }} : {{ memo.description }}
       </li>
     </ul>
   </div>
@@ -18,10 +18,9 @@ export default {
       memos: "memos",
     };
   },
-  mounted(){
+  mounted() {
     this.setMemo();
-  }
-  ,
+  },
   methods: {
     setMemo: function () {
       // axios.<httpメソッド>(<route>)でデータを取得してthis.memosに保存する

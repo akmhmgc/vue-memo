@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get "home" , to: "home#index"
-  
+  get 'home', to: 'home#index'
+
   namespace :api, format: 'json' do
-    resources :memos, only: [:index]
+    resources :memos, only: %i[index create]
   end
 end
