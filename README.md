@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 実行方法
+イメージのビルド
 
-Things you may want to cover:
+`$ docker-compose build`
 
-* Ruby version
+パッケージのインストール
 
-* System dependencies
+`$ docker-compose run web yarn install`
 
-* Configuration
+dbの作成とmigration
 
-* Database creation
+`$ docker-compose run web db:create`
 
-* Database initialization
+`$ docker-compose run web db:migrate`
 
-* How to run the test suite
+`$ docker-compose run web db:seed`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+実行
+`$ docker-compose up -d`
