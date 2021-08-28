@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <p>{{ memo }}</p>
-    <ul>
-      <li v-for="memo in memos" :key="memo.id">
-        {{ memo.title }} : {{ memo.description }}
-      </li>
-    </ul>
     <div>
       <!-- v-model=<モデル名>でdataで指定したプロパティを変更できる -->
       <input v-model="title" placeholder="title" />
       <input v-model="description" placeholder="description" />
       <button @click="addMemo">メモを追加</button>
     </div>
+    <ul>
+      <li v-for="memo in memos" :key="memo.id">
+        {{ memo.title }} : {{ memo.description }}
+      </li>
+    </ul>
   </div>
 </template>
 
