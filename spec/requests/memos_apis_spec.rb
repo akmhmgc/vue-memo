@@ -13,4 +13,17 @@ RSpec.describe "MemosApis", type: :request do
       expect(json.length).to eq 5
     end
   end
+
+  describe "POST /memos_apis" do
+    it "メモを作成できること" do
+      expect{
+        post api_memos_path ,params: {
+          title: "sample title",
+          description: "sample description"
+        }
+      }.to change(Memo, :count).by(1)
+      
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
